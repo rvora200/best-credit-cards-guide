@@ -17,6 +17,9 @@
             padding: 0;
             box-sizing: border-box;
         }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
@@ -62,6 +65,7 @@
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s;
+            cursor: pointer;
         }
         nav a:hover {
             color: #764ba2;
@@ -129,6 +133,7 @@
             margin-top: 1rem;
             font-weight: bold;
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
         .cta-button:hover {
             transform: scale(1.05);
@@ -144,6 +149,7 @@
             font-weight: bold;
             font-size: 0.9rem;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
         .affiliate-button:hover {
             background: #ff5252;
@@ -198,6 +204,14 @@
             padding: 2rem 1rem;
             margin-top: 3rem;
         }
+        footer a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        footer a:hover {
+            opacity: 0.8;
+        }
         .sidebar {
             background: white;
             padding: 1.5rem;
@@ -208,6 +222,14 @@
         .sidebar h3 {
             color: #667eea;
             margin-bottom: 1rem;
+        }
+        .sidebar a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .sidebar a:hover {
+            color: #667eea;
         }
         .featured-card {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -231,6 +253,41 @@
             font-weight: bold;
             margin-bottom: 0.5rem;
         }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 500px;
+            margin: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .modal-content h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #000;
+        }
         @media (max-width: 768px) {
             header h1 {
                 font-size: 1.8rem;
@@ -244,6 +301,9 @@
             }
             .comparison-table {
                 font-size: 0.9rem;
+            }
+            .comparison-table th, .comparison-table td {
+                padding: 0.5rem;
             }
         }
     </style>
@@ -290,7 +350,7 @@
                 <li>🌍 No foreign transaction fees</li>
                 <li>⭐ Airport lounge access worldwide</li>
             </ul>
-            <a href="#apply" class="affiliate-button">Apply Now - Limited Time Offer →</a>
+            <a href="javascript:void(0);" onclick="showApplyModal('Premium Travel Rewards Card')" class="affiliate-button">Apply Now - Limited Time Offer →</a>
             <p style="font-size: 0.85rem; margin-top: 1rem; opacity: 0.9;">Annual Fee: $95 | APR: 18.99% - 25.99% Variable</p>
         </div>
 
@@ -327,7 +387,7 @@
                     <li>Perfect for everyday spending</li>
                 </ul>
                 <a href="#cashback-details" class="cta-button">Compare Cashback Cards</a>
-                <a href="#apply-cashback" class="affiliate-button">Apply Now - Get $200 Bonus</a>
+                <a href="javascript:void(0);" onclick="showApplyModal('Ultimate Cashback Card')" class="affiliate-button">Apply Now - Get $200 Bonus</a>
             </div>
 
             <div class="card" id="travel">
@@ -342,7 +402,7 @@
                     <li>Travel insurance & protections</li>
                 </ul>
                 <a href="#travel-details" class="cta-button">Explore Travel Cards</a>
-                <a href="#apply-travel" class="affiliate-button">Apply Now - 100K Points</a>
+                <a href="javascript:void(0);" onclick="showApplyModal('Premium Travel Card')" class="affiliate-button">Apply Now - 100K Points</a>
             </div>
 
             <div class="card">
@@ -357,7 +417,7 @@
                     <li>No credit history required</li>
                 </ul>
                 <a href="#credit-builder" class="cta-button">Start Building Credit</a>
-                <a href="#apply-secured" class="affiliate-button">Apply Now - $0 Fee</a>
+                <a href="javascript:void(0);" onclick="showApplyModal('Secured Credit Builder Card')" class="affiliate-button">Apply Now - $0 Fee</a>
             </div>
 
             <div class="card">
@@ -372,7 +432,7 @@
                     <li>Premium rewards multipliers</li>
                 </ul>
                 <a href="#luxury-cards" class="cta-button">View Premium Cards</a>
-                <a href="#apply-premium" class="affiliate-button">Apply Now - VIP Benefits</a>
+                <a href="javascript:void(0);" onclick="showApplyModal('Platinum Luxury Card')" class="affiliate-button">Apply Now - VIP Benefits</a>
             </div>
 
             <div class="card">
@@ -387,7 +447,7 @@
                     <li>Maximize daily spending</li>
                 </ul>
                 <a href="#grocery-cards" class="cta-button">Find Your Card</a>
-                <a href="#apply-grocery" class="affiliate-button">Apply Now - 6% Back</a>
+                <a href="javascript:void(0);" onclick="showApplyModal('Grocery Rewards Plus Card')" class="affiliate-button">Apply Now - 6% Back</a>
             </div>
 
             <div class="card">
@@ -402,7 +462,7 @@
                     <li>Debt consolidation made easy</li>
                 </ul>
                 <a href="#balance-transfer" class="cta-button">Compare 0% APR Cards</a>
-                <a href="#apply-balance" class="affiliate-button">Apply Now - 21 Months 0%</a>
+                <a href="javascript:void(0);" onclick="showApplyModal('Balance Transfer Pro Card')" class="affiliate-button">Apply Now - 21 Months 0%</a>
             </div>
         </div>
 
@@ -431,7 +491,7 @@
                         <td>5X travel, 3X dining</td>
                         <td>Frequent travelers</td>
                         <td><span class="rating">★★★★★</span></td>
-                        <td><a href="#apply" class="affiliate-button">Apply</a></td>
+                        <td><a href="javascript:void(0);" onclick="showApplyModal('Premium Travel Rewards')" class="affiliate-button">Apply</a></td>
                     </tr>
                     <tr>
                         <td><strong>Ultimate Cashback Card</strong></td>
@@ -440,7 +500,7 @@
                         <td>5% rotating, 2% all</td>
                         <td>Everyday spending</td>
                         <td><span class="rating">★★★★★</span></td>
-                        <td><a href="#apply" class="affiliate-button">Apply</a></td>
+                        <td><a href="javascript:void(0);" onclick="showApplyModal('Ultimate Cashback Card')" class="affiliate-button">Apply</a></td>
                     </tr>
                     <tr>
                         <td><strong>Secured Credit Builder</strong></td>
@@ -449,7 +509,7 @@
                         <td>1% cashback</td>
                         <td>Building credit</td>
                         <td><span class="rating">★★★★☆</span></td>
-                        <td><a href="#apply" class="affiliate-button">Apply</a></td>
+                        <td><a href="javascript:void(0);" onclick="showApplyModal('Secured Credit Builder')" class="affiliate-button">Apply</a></td>
                     </tr>
                     <tr>
                         <td><strong>Platinum Luxury Card</strong></td>
@@ -458,7 +518,7 @@
                         <td>5X flights, hotels</td>
                         <td>Premium travelers</td>
                         <td><span class="rating">★★★★★</span></td>
-                        <td><a href="#apply" class="affiliate-button">Apply</a></td>
+                        <td><a href="javascript:void(0);" onclick="showApplyModal('Platinum Luxury Card')" class="affiliate-button">Apply</a></td>
                     </tr>
                     <tr>
                         <td><strong>Grocery Rewards Plus</strong></td>
@@ -467,7 +527,7 @@
                         <td>6% groceries, 3% gas</td>
                         <td>Families</td>
                         <td><span class="rating">★★★★★</span></td>
-                        <td><a href="#apply" class="affiliate-button">Apply</a></td>
+                        <td><a href="javascript:void(0);" onclick="showApplyModal('Grocery Rewards Plus')" class="affiliate-button">Apply</a></td>
                     </tr>
                     <tr>
                         <td><strong>Balance Transfer Pro</strong></td>
@@ -476,7 +536,7 @@
                         <td>1.5% cashback</td>
                         <td>Debt payoff</td>
                         <td><span class="rating">★★★★☆</span></td>
-                        <td><a href="#apply" class="affiliate-button">Apply</a></td>
+                        <td><a href="javascript:void(0);" onclick="showApplyModal('Balance Transfer Pro')" class="affiliate-button">Apply</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -498,7 +558,7 @@
         <div class="article-section" id="reviews">
             <h2>📝 In-Depth Credit Card Reviews</h2>
             
-            <h2>Premium Travel Rewards Card - Full Review</h2>
+            <h2 id="cashback-details">Premium Travel Rewards Card - Full Review</h2>
             <p><strong>Overall Rating: ★★★★★ 4.9/5</strong></p>
             <p>The Premium Travel Rewards Card stands out as our top pick for frequent travelers in 2025. With an impressive 100,000-point welcome bonus (worth $1,000+ in travel), this card delivers exceptional value despite its $95 annual fee.</p>
             
@@ -516,10 +576,10 @@
             
             <p><strong>Drawbacks:</strong> The $95 annual fee may not be worth it for infrequent travelers. Also, the best redemption rates require booking through the card's portal.</p>
             
-            <a href="#apply-premium-travel" class="affiliate-button">Apply Now - Get 100,000 Bonus Points →</a>
+            <a href="javascript:void(0);" onclick="showApplyModal('Premium Travel Rewards Card')" class="affiliate-button">Apply Now - Get 100,000 Bonus Points →</a>
         </div>
 
-        <div class="article-section">
+        <div class="article-section" id="travel-details">
             <h2>Ultimate Cashback Card - Full Review</h2>
             <p><strong>Overall Rating: ★★★★★ 4.9/5</strong></p>
             <p>For simplicity and maximum value, the Ultimate Cashback Card is unbeatable. With no annual fee and straightforward rewards, it's perfect for anyone who wants cash back without complexity.</p>
@@ -535,7 +595,7 @@
             
             <p><strong>Real-World Example:</strong> If you spend $2,000/month ($24,000/year), you'll earn approximately $480 in cashback annually, plus the $200 sign-up bonus.</p>
             
-            <a href="#apply-cashback" class="affiliate-button">Apply Now - Get $200 Cash Bonus →</a>
+            <a href="javascript:void(0);" onclick="showApplyModal('Ultimate Cashback Card')" class="affiliate-button">Apply Now - Get $200 Cash Bonus →</a>
         </div>
 
         <!-- Rewards Calculator Section -->
@@ -560,7 +620,7 @@
             <p><strong>Pro Tip:</strong> Stack multiple cards to maximize rewards in each category. Use a grocery card for supermarkets, a gas card for fuel, and a travel card for flights.</p>
         </div>
 
-        <div class="article-section">
+        <div class="article-section" id="credit-builder">
             <h2>📊 How to Choose the Right Credit Card</h2>
             <p><strong>1. Analyze Your Spending Habits:</strong> Track where you spend most - groceries, gas, dining, travel, or general purchases. Choose cards that reward your top spending categories.</p>
             <p><strong>2. Consider Annual Fees:</strong> Premium cards with annual fees ($95-$695) often provide value through rewards and perks that exceed the fee. Calculate your break-even point.</p>
@@ -569,7 +629,7 @@
             <p><strong>5. Review Additional Benefits:</strong> Travel insurance, purchase protection, extended warranties, rental car coverage, and concierge services add significant value.</p>
         </div>
 
-        <div class="sidebar">
+        <div class="sidebar" id="luxury-cards">
             <h3>🔥 Trending Articles</h3>
             <ul style="list-style: none; padding: 0;">
                 <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">→ <a href="#credit-score">How to Improve Your Credit Score by 100+ Points</a></li>
@@ -592,7 +652,7 @@
             </script>
         </div>
 
-        <div class="article-section">
+        <div class="article-section" id="grocery-cards">
             <h2>💡 Expert Tips for Maximizing Credit Card Benefits</h2>
             <p><strong>Stack Multiple Cards:</strong> Use different cards for different categories. One for groceries (6% back), another for gas (5% back), and a catch-all 2% card for everything else. This strategy can earn you $1,000+ annually.</p>
             <p><strong>Time Your Applications:</strong> Apply for cards when you have major expenses coming (wedding, vacation, home renovation) to easily meet sign-up bonus requirements without overspending.</p>
@@ -602,7 +662,7 @@
             <p><strong>Use Shopping Portals:</strong> Earn extra points by shopping through card-specific portals. Stack with card rewards for 10%+ total returns on purchases.</p>
         </div>
 
-        <div class="article-section">
+        <div class="article-section" id="balance-transfer">
             <h2>🎯 Credit Card Strategy by Income Level</h2>
             
             <p><strong>Income Under $40K:</strong></p>
@@ -642,11 +702,77 @@
     <footer>
         <p>&copy; 2025 Best Credit Cards Guide | Your trusted source for credit card comparisons and personal finance advice</p>
         <p style="margin-top: 1rem; font-size: 0.9rem;">Disclaimer: Credit card offers change frequently. Always verify current terms with card issuers. We may receive compensation when you click on links to products.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.85rem;">
-            <a href="#privacy" style="color: white; margin: 0 1rem;">Privacy Policy</a> | 
-            <a href="#terms" style="color: white; margin: 0 1rem;">Terms of Service</a> | 
-            <a href="#contact" style="color: white; margin: 0 1rem;">Contact Us</a>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;" id="credit-score">
+            <a href="#privacy">Privacy Policy</a> | 
+            <a href="#terms">Terms of Service</a> | 
+            <a href="#contact">Contact Us</a>
         </p>
     </footer>
+
+    <!-- Application Modal -->
+    <div id="applyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Ready to Apply?</h2>
+            <p id="modalCardName" style="font-size: 1.2rem; color: #667eea; font-weight: bold; margin: 1rem 0;"></p>
+            <p>To complete your application, you'll need to add your affiliate links here.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+                <strong>Steps to add affiliate links:</strong><br>
+                1. Join credit card affiliate programs<br>
+                2. Get your unique tracking URLs<br>
+                3. Replace the onclick functions with your affiliate links<br>
+                4. Start earning commissions!
+            </p>
+            <div style="margin-top: 1.5rem;">
+                <a href="https://www.creditkarma.com/credit-cards" target="_blank" class="cta-button" style="margin: 0.5rem;">Visit Credit Karma</a>
+                <a href="https://www.nerdwallet.com/credit-cards" target="_blank" class="cta-button" style="margin: 0.5rem;">Visit NerdWallet</a>
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: #999;">These are example links. Replace with your affiliate URLs.</p>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== 'javascript:void(0);') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Modal functions
+        function showApplyModal(cardName) {
+            document.getElementById('modalCardName').textContent = cardName;
+            document.getElementById('applyModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('applyModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('applyModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
