@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Find the best credit cards for 2025. Compare rewards, cashback, travel points, and APR rates. Expert reviews and personal finance tips to maximize your benefits.">
-    <meta name="keywords" content="best credit cards, credit card rewards, cashback credit cards, travel rewards, credit card comparison, personal finance, credit score, APR rates">
+    <meta name="keywords" content="best credit cards, credit card rewards, cashback credit cards, travel rewards, credit card comparison, personal finance, credit score, APR rates, balance transfer, 0% APR">
     <title>Best Credit Cards 2025 | Ultimate Rewards & Cashback Guide</title>
+    
+    <!-- Google AdSense - Replace with your AdSense code after approval -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+    
     <style>
         * {
             margin: 0;
@@ -33,6 +38,34 @@
             font-size: 1.2rem;
             opacity: 0.95;
         }
+        nav {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        nav li {
+            margin: 0.5rem 1rem;
+        }
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #764ba2;
+        }
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -45,8 +78,10 @@
             margin: 2rem 0;
             text-align: center;
             border-radius: 8px;
-            color: #999;
-            font-size: 0.9rem;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .content-grid {
             display: grid;
@@ -98,6 +133,22 @@
         .cta-button:hover {
             transform: scale(1.05);
         }
+        .affiliate-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 0.5rem;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .affiliate-button:hover {
+            background: #ff5252;
+            transform: scale(1.05);
+        }
         .article-section {
             background: white;
             padding: 2rem;
@@ -113,6 +164,32 @@
         .article-section p {
             margin-bottom: 1rem;
             font-size: 1.1rem;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+        .rating {
+            color: #ffd700;
+            font-size: 1.2rem;
         }
         footer {
             background: #2d3748;
@@ -132,12 +209,41 @@
             color: #667eea;
             margin-bottom: 1rem;
         }
+        .featured-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        .featured-card h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .badge {
+            display: inline-block;
+            background: #ffd700;
+            color: #333;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
         @media (max-width: 768px) {
             header h1 {
                 font-size: 1.8rem;
             }
             .content-grid {
                 grid-template-columns: 1fr;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .comparison-table {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -148,11 +254,44 @@
         <p>Compare Top Rewards, Cashback & Travel Credit Cards | Expert Reviews</p>
     </header>
 
+    <nav>
+        <ul>
+            <li><a href="#top-picks">Top Picks</a></li>
+            <li><a href="#cashback">Cashback Cards</a></li>
+            <li><a href="#travel">Travel Rewards</a></li>
+            <li><a href="#comparison">Comparison Tool</a></li>
+            <li><a href="#reviews">Card Reviews</a></li>
+            <li><a href="#calculator">Rewards Calculator</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
-        <!-- Top Ad Space -->
+        <!-- Top Ad Space - Google AdSense -->
         <div class="ad-space">
-            📢 PREMIUM AD SPACE - 728x90 Leaderboard Banner<br>
-            (Google AdSense / High-CPC Financial Ads)
+            <!-- AdSense Leaderboard 728x90 -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:728px;height:90px"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- Featured Card of the Month -->
+        <div class="featured-card" id="top-picks">
+            <span class="badge">🏆 EDITOR'S CHOICE 2025</span>
+            <h2>Premium Travel Rewards Card</h2>
+            <p><strong>100,000 Bonus Points</strong> after spending $4,000 in first 3 months</p>
+            <ul style="list-style: none; padding: 0; margin: 1rem 0;">
+                <li>✈️ 5X points on flights & hotels</li>
+                <li>🍽️ 3X points on dining & travel</li>
+                <li>💰 $300 annual travel credit</li>
+                <li>🌍 No foreign transaction fees</li>
+                <li>⭐ Airport lounge access worldwide</li>
+            </ul>
+            <a href="#apply" class="affiliate-button">Apply Now - Limited Time Offer →</a>
+            <p style="font-size: 0.85rem; margin-top: 1rem; opacity: 0.9;">Annual Fee: $95 | APR: 18.99% - 25.99% Variable</p>
         </div>
 
         <!-- Main Content -->
@@ -160,17 +299,26 @@
             <h2>🏆 Top Credit Cards for Maximum Rewards in 2025</h2>
             <p>Looking for the best credit card to maximize your rewards, cashback, or travel points? Our comprehensive guide helps you compare the top credit cards available today. Whether you're building credit, seeking premium travel benefits, or maximizing everyday cashback, we've analyzed hundreds of cards to bring you the best options.</p>
             <p><strong>Why Credit Card Choice Matters:</strong> The right credit card can save you thousands annually through rewards, cashback, and exclusive perks. With average American households spending $60,000+ yearly, even 2% cashback equals $1,200 back in your pocket!</p>
+            <p><strong>Updated Monthly:</strong> Our team reviews credit card offers every month to ensure you get the most current information on sign-up bonuses, APR rates, and reward structures.</p>
         </div>
 
         <!-- Ad Space -->
         <div class="ad-space">
-            📢 SIDEBAR AD SPACE - 300x250 Medium Rectangle<br>
-            (High-Value Financial Offers)
+            <!-- AdSense Medium Rectangle 300x250 -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:300px;height:250px"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
 
-        <div class="content-grid">
+        <div class="content-grid" id="cashback">
             <div class="card">
+                <span class="badge">BEST VALUE</span>
                 <h2>💰 Best Cashback Cards</h2>
+                <div class="rating">★★★★★ 4.9/5</div>
                 <ul>
                     <li>Up to 5% cashback on rotating categories</li>
                     <li>2% cashback on all purchases</li>
@@ -178,11 +326,14 @@
                     <li>Sign-up bonuses up to $200</li>
                     <li>Perfect for everyday spending</li>
                 </ul>
-                <a href="#" class="cta-button">Compare Cashback Cards</a>
+                <a href="#cashback-details" class="cta-button">Compare Cashback Cards</a>
+                <a href="#apply-cashback" class="affiliate-button">Apply Now - Get $200 Bonus</a>
             </div>
 
-            <div class="card">
+            <div class="card" id="travel">
+                <span class="badge">MOST POPULAR</span>
                 <h2>✈️ Best Travel Rewards</h2>
+                <div class="rating">★★★★★ 4.8/5</div>
                 <ul>
                     <li>Earn 3-5X points on travel & dining</li>
                     <li>100,000+ point welcome bonuses</li>
@@ -190,11 +341,14 @@
                     <li>No foreign transaction fees</li>
                     <li>Travel insurance & protections</li>
                 </ul>
-                <a href="#" class="cta-button">Explore Travel Cards</a>
+                <a href="#travel-details" class="cta-button">Explore Travel Cards</a>
+                <a href="#apply-travel" class="affiliate-button">Apply Now - 100K Points</a>
             </div>
 
             <div class="card">
+                <span class="badge">BEGINNER FRIENDLY</span>
                 <h2>🎯 Best for Building Credit</h2>
+                <div class="rating">★★★★☆ 4.6/5</div>
                 <ul>
                     <li>Secured cards with low deposits</li>
                     <li>Credit limit increases available</li>
@@ -202,11 +356,14 @@
                     <li>Graduate to unsecured cards</li>
                     <li>No credit history required</li>
                 </ul>
-                <a href="#" class="cta-button">Start Building Credit</a>
+                <a href="#credit-builder" class="cta-button">Start Building Credit</a>
+                <a href="#apply-secured" class="affiliate-button">Apply Now - $0 Fee</a>
             </div>
 
             <div class="card">
+                <span class="badge">PREMIUM</span>
                 <h2>⭐ Premium Luxury Cards</h2>
+                <div class="rating">★★★★★ 5.0/5</div>
                 <ul>
                     <li>Exclusive concierge services</li>
                     <li>$300+ annual travel credits</li>
@@ -214,11 +371,14 @@
                     <li>Elite status with hotels & airlines</li>
                     <li>Premium rewards multipliers</li>
                 </ul>
-                <a href="#" class="cta-button">View Premium Cards</a>
+                <a href="#luxury-cards" class="cta-button">View Premium Cards</a>
+                <a href="#apply-premium" class="affiliate-button">Apply Now - VIP Benefits</a>
             </div>
 
             <div class="card">
+                <span class="badge">FAMILY FAVORITE</span>
                 <h2>🏪 Best for Groceries & Gas</h2>
+                <div class="rating">★★★★★ 4.7/5</div>
                 <ul>
                     <li>4-6% back at supermarkets</li>
                     <li>3-5% back at gas stations</li>
@@ -226,11 +386,14 @@
                     <li>Quarterly rotating bonuses</li>
                     <li>Maximize daily spending</li>
                 </ul>
-                <a href="#" class="cta-button">Find Your Card</a>
+                <a href="#grocery-cards" class="cta-button">Find Your Card</a>
+                <a href="#apply-grocery" class="affiliate-button">Apply Now - 6% Back</a>
             </div>
 
             <div class="card">
+                <span class="badge">DEBT PAYOFF</span>
                 <h2>💳 0% APR Balance Transfer</h2>
+                <div class="rating">★★★★☆ 4.5/5</div>
                 <ul>
                     <li>0% APR for 15-21 months</li>
                     <li>Pay off debt interest-free</li>
@@ -238,14 +401,163 @@
                     <li>Save thousands on interest</li>
                     <li>Debt consolidation made easy</li>
                 </ul>
-                <a href="#" class="cta-button">Compare 0% APR Cards</a>
+                <a href="#balance-transfer" class="cta-button">Compare 0% APR Cards</a>
+                <a href="#apply-balance" class="affiliate-button">Apply Now - 21 Months 0%</a>
             </div>
+        </div>
+
+        <!-- Comparison Tool Section -->
+        <div class="article-section" id="comparison">
+            <h2>📊 Credit Card Comparison Tool</h2>
+            <p>Compare the top credit cards side-by-side to find the perfect match for your spending habits and financial goals.</p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Card Name</th>
+                        <th>Annual Fee</th>
+                        <th>Sign-Up Bonus</th>
+                        <th>Rewards Rate</th>
+                        <th>Best For</th>
+                        <th>Rating</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Premium Travel Rewards</strong></td>
+                        <td>$95</td>
+                        <td>100,000 points</td>
+                        <td>5X travel, 3X dining</td>
+                        <td>Frequent travelers</td>
+                        <td><span class="rating">★★★★★</span></td>
+                        <td><a href="#apply" class="affiliate-button">Apply</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ultimate Cashback Card</strong></td>
+                        <td>$0</td>
+                        <td>$200 cash</td>
+                        <td>5% rotating, 2% all</td>
+                        <td>Everyday spending</td>
+                        <td><span class="rating">★★★★★</span></td>
+                        <td><a href="#apply" class="affiliate-button">Apply</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Secured Credit Builder</strong></td>
+                        <td>$0</td>
+                        <td>N/A</td>
+                        <td>1% cashback</td>
+                        <td>Building credit</td>
+                        <td><span class="rating">★★★★☆</span></td>
+                        <td><a href="#apply" class="affiliate-button">Apply</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Platinum Luxury Card</strong></td>
+                        <td>$695</td>
+                        <td>150,000 points</td>
+                        <td>5X flights, hotels</td>
+                        <td>Premium travelers</td>
+                        <td><span class="rating">★★★★★</span></td>
+                        <td><a href="#apply" class="affiliate-button">Apply</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Grocery Rewards Plus</strong></td>
+                        <td>$95</td>
+                        <td>$250 cash</td>
+                        <td>6% groceries, 3% gas</td>
+                        <td>Families</td>
+                        <td><span class="rating">★★★★★</span></td>
+                        <td><a href="#apply" class="affiliate-button">Apply</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Balance Transfer Pro</strong></td>
+                        <td>$0</td>
+                        <td>0% APR 21 months</td>
+                        <td>1.5% cashback</td>
+                        <td>Debt payoff</td>
+                        <td><span class="rating">★★★★☆</span></td>
+                        <td><a href="#apply" class="affiliate-button">Apply</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- Mid-Content Ad -->
         <div class="ad-space">
-            📢 CONTENT AD SPACE - 728x90 Banner<br>
-            (Financial Services / Credit Card Offers)
+            <!-- AdSense Banner 728x90 -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:728px;height:90px"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- Detailed Card Reviews Section -->
+        <div class="article-section" id="reviews">
+            <h2>📝 In-Depth Credit Card Reviews</h2>
+            
+            <h2>Premium Travel Rewards Card - Full Review</h2>
+            <p><strong>Overall Rating: ★★★★★ 4.9/5</strong></p>
+            <p>The Premium Travel Rewards Card stands out as our top pick for frequent travelers in 2025. With an impressive 100,000-point welcome bonus (worth $1,000+ in travel), this card delivers exceptional value despite its $95 annual fee.</p>
+            
+            <p><strong>Key Benefits:</strong></p>
+            <ul>
+                <li><strong>5X Points:</strong> Earn 5 points per dollar on flights and hotels booked through the card's travel portal</li>
+                <li><strong>3X Points:</strong> Earn 3 points per dollar on dining and general travel purchases</li>
+                <li><strong>$300 Annual Credit:</strong> Automatic $300 travel credit each year (effectively reducing annual fee to -$205)</li>
+                <li><strong>Global Lounge Access:</strong> Priority Pass membership with 1,300+ airport lounges worldwide</li>
+                <li><strong>No Foreign Fees:</strong> Perfect for international travelers</li>
+                <li><strong>Travel Insurance:</strong> Trip cancellation, delay, and lost luggage coverage</li>
+            </ul>
+            
+            <p><strong>Who Should Apply:</strong> This card is ideal for anyone who spends $3,000+ annually on travel and dining. The welcome bonus alone covers 10+ years of annual fees.</p>
+            
+            <p><strong>Drawbacks:</strong> The $95 annual fee may not be worth it for infrequent travelers. Also, the best redemption rates require booking through the card's portal.</p>
+            
+            <a href="#apply-premium-travel" class="affiliate-button">Apply Now - Get 100,000 Bonus Points →</a>
+        </div>
+
+        <div class="article-section">
+            <h2>Ultimate Cashback Card - Full Review</h2>
+            <p><strong>Overall Rating: ★★★★★ 4.9/5</strong></p>
+            <p>For simplicity and maximum value, the Ultimate Cashback Card is unbeatable. With no annual fee and straightforward rewards, it's perfect for anyone who wants cash back without complexity.</p>
+            
+            <p><strong>Key Benefits:</strong></p>
+            <ul>
+                <li><strong>5% Rotating Categories:</strong> Earn 5% back on up to $1,500 in combined purchases each quarter in categories like gas, groceries, restaurants, and Amazon (activation required)</li>
+                <li><strong>2% Everywhere Else:</strong> Flat 2% cashback on all other purchases with no limits</li>
+                <li><strong>$200 Welcome Bonus:</strong> After spending $500 in first 3 months</li>
+                <li><strong>$0 Annual Fee:</strong> No cost to maintain, ever</li>
+                <li><strong>Intro APR:</strong> 0% APR for 15 months on purchases and balance transfers</li>
+            </ul>
+            
+            <p><strong>Real-World Example:</strong> If you spend $2,000/month ($24,000/year), you'll earn approximately $480 in cashback annually, plus the $200 sign-up bonus.</p>
+            
+            <a href="#apply-cashback" class="affiliate-button">Apply Now - Get $200 Cash Bonus →</a>
+        </div>
+
+        <!-- Rewards Calculator Section -->
+        <div class="article-section" id="calculator">
+            <h2>💰 Credit Card Rewards Calculator</h2>
+            <p>Estimate how much you could earn with different credit cards based on your spending habits:</p>
+            
+            <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <p><strong>Example Calculation:</strong></p>
+                <p>Monthly Spending Breakdown:</p>
+                <ul>
+                    <li>Groceries: $600 × 6% = $36/month = <strong>$432/year</strong></li>
+                    <li>Gas: $200 × 5% = $10/month = <strong>$120/year</strong></li>
+                    <li>Dining: $400 × 3% = $12/month = <strong>$144/year</strong></li>
+                    <li>Other: $800 × 2% = $16/month = <strong>$192/year</strong></li>
+                </ul>
+                <p style="font-size: 1.2rem; font-weight: bold; color: #667eea; margin-top: 1rem;">
+                    Total Annual Rewards: $888 + $200 Sign-Up Bonus = <span style="color: #ff6b6b;">$1,088 First Year!</span>
+                </p>
+            </div>
+            
+            <p><strong>Pro Tip:</strong> Stack multiple cards to maximize rewards in each category. Use a grocery card for supermarkets, a gas card for fuel, and a travel card for flights.</p>
         </div>
 
         <div class="article-section">
@@ -258,34 +570,83 @@
         </div>
 
         <div class="sidebar">
-            <h3>🔥 Hot Topics</h3>
+            <h3>🔥 Trending Articles</h3>
             <ul style="list-style: none; padding: 0;">
-                <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">→ Credit Score Improvement Tips</li>
-                <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">→ Maximize Credit Card Rewards</li>
-                <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">→ Travel Hacking Strategies</li>
-                <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">→ Debt Payoff Calculator</li>
-                <li style="padding: 0.5rem 0;">→ Credit Card Application Guide</li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">→ <a href="#credit-score">How to Improve Your Credit Score by 100+ Points</a></li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">→ <a href="#maximize">Maximize Credit Card Rewards: Advanced Strategies</a></li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">→ <a href="#travel-hacking">Travel Hacking: Free Flights & Hotels Guide</a></li>
+                <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">→ <a href="#debt-payoff">Debt Payoff Calculator & Strategy</a></li>
+                <li style="padding: 0.5rem 0;">→ <a href="#application">Credit Card Application Tips: Approval Secrets</a></li>
             </ul>
         </div>
 
         <!-- Bottom Ad Space -->
         <div class="ad-space">
-            📢 BOTTOM AD SPACE - 970x250 Billboard<br>
-            (Premium Financial Product Placements)
+            <!-- AdSense Large Rectangle 336x280 -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:336px;height:280px"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
 
         <div class="article-section">
             <h2>💡 Expert Tips for Maximizing Credit Card Benefits</h2>
-            <p><strong>Stack Multiple Cards:</strong> Use different cards for different categories. One for groceries (6% back), another for gas (5% back), and a catch-all 2% card for everything else.</p>
-            <p><strong>Time Your Applications:</strong> Apply for cards when you have major expenses coming (wedding, vacation, home renovation) to easily meet sign-up bonus requirements.</p>
-            <p><strong>Pay in Full Monthly:</strong> Interest charges quickly negate rewards. Always pay your full balance to maximize benefits without costs.</p>
-            <p><strong>Monitor Your Credit:</strong> Use free credit monitoring tools to track your score and ensure you qualify for the best cards with premium benefits.</p>
+            <p><strong>Stack Multiple Cards:</strong> Use different cards for different categories. One for groceries (6% back), another for gas (5% back), and a catch-all 2% card for everything else. This strategy can earn you $1,000+ annually.</p>
+            <p><strong>Time Your Applications:</strong> Apply for cards when you have major expenses coming (wedding, vacation, home renovation) to easily meet sign-up bonus requirements without overspending.</p>
+            <p><strong>Pay in Full Monthly:</strong> Interest charges quickly negate rewards. A $1,000 balance at 20% APR costs $200/year in interest - wiping out most rewards. Always pay your full balance.</p>
+            <p><strong>Monitor Your Credit:</strong> Use free credit monitoring tools (Credit Karma, Experian) to track your score and ensure you qualify for the best cards with premium benefits.</p>
+            <p><strong>Activate Quarterly Bonuses:</strong> Many cards require activation for rotating 5% categories. Set calendar reminders each quarter to activate and maximize earnings.</p>
+            <p><strong>Use Shopping Portals:</strong> Earn extra points by shopping through card-specific portals. Stack with card rewards for 10%+ total returns on purchases.</p>
+        </div>
+
+        <div class="article-section">
+            <h2>🎯 Credit Card Strategy by Income Level</h2>
+            
+            <p><strong>Income Under $40K:</strong></p>
+            <ul>
+                <li>Focus on no-annual-fee cashback cards</li>
+                <li>Build credit with secured cards if needed</li>
+                <li>Target $200-300 annual rewards</li>
+                <li>Recommended: Ultimate Cashback Card, Secured Credit Builder</li>
+            </ul>
+            
+            <p><strong>Income $40K-$80K:</strong></p>
+            <ul>
+                <li>Mix of cashback and travel rewards cards</li>
+                <li>Consider cards with modest annual fees ($95)</li>
+                <li>Target $500-800 annual rewards</li>
+                <li>Recommended: Premium Travel Rewards, Grocery Rewards Plus</li>
+            </ul>
+            
+            <p><strong>Income $80K+:</strong></p>
+            <ul>
+                <li>Premium travel cards with high annual fees</li>
+                <li>Multiple cards for category optimization</li>
+                <li>Target $1,500+ annual rewards</li>
+                <li>Recommended: Platinum Luxury Card, Premium Travel Rewards, Ultimate Cashback</li>
+            </ul>
+        </div>
+
+        <!-- Final CTA Section -->
+        <div class="featured-card">
+            <h2>🚀 Ready to Start Earning More Rewards?</h2>
+            <p>Compare all top credit cards and find your perfect match. Our expert recommendations are updated monthly with the latest offers and bonuses.</p>
+            <a href="#top-picks" class="cta-button" style="background: white; color: #667eea; margin-right: 1rem;">View All Cards</a>
+            <a href="#comparison" class="cta-button" style="background: rgba(255,255,255,0.2);">Use Comparison Tool</a>
         </div>
     </div>
 
     <footer>
         <p>&copy; 2025 Best Credit Cards Guide | Your trusted source for credit card comparisons and personal finance advice</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">Disclaimer: Credit card offers change frequently. Always verify current terms with card issuers.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Disclaimer: Credit card offers change frequently. Always verify current terms with card issuers. We may receive compensation when you click on links to products.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+            <a href="#privacy" style="color: white; margin: 0 1rem;">Privacy Policy</a> | 
+            <a href="#terms" style="color: white; margin: 0 1rem;">Terms of Service</a> | 
+            <a href="#contact" style="color: white; margin: 0 1rem;">Contact Us</a>
+        </p>
     </footer>
 </body>
 </html>
